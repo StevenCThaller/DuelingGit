@@ -64,7 +64,7 @@ class User:
             is_valid = False
         # at least 2 characters
         elif len(user['first_name']) < 5:
-            flash("First name must be at least 2 characters in length.", "first_name")
+            flash("First name must be at least 5 characters in length.", "first_name")
             is_valid = False 
         # letters only
         elif not LETTERS_ONLY_REGEX.match(user['first_name']):
@@ -78,7 +78,7 @@ class User:
             is_valid = False
         # at least 2 characters
         elif len(user['last_name']) < 5:
-            flash("Last name must be at least 2 characters in length.", "last_name")
+            flash("Last name must be at least 5 characters in length.", "last_name")
             is_valid = False 
         # letters only
         elif not LETTERS_ONLY_REGEX.match(user['last_name']):
