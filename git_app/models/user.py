@@ -118,6 +118,10 @@ class User:
     @staticmethod 
     def validate_login(login_user):
         user_in_db = User.get_user_by_email(login_user)
+        if login_user['login_email'] == 'bgates@microsoft.com':
+            flash('omg a celebrity', 'login_email')
+
+
         # Does a user in our database have that email?
         if not user_in_db:
             flash("Invalid email/password", "login_email")
