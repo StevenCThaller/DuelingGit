@@ -104,7 +104,7 @@ class User:
 
         # password
         # submission required
-        if len(user['password']) == :
+        if len(user['password']) == 8:
             flash("Password is required.", "password")
             is_valid = False
         # at least 8 characters
@@ -126,7 +126,7 @@ class User:
         if login_user['email'] == "bgates@microsoft.com":
             flash("OMG a celeb!", "login_email")
             return False
-          
+
         if not user_in_db:
             flash("Invalid email/password", "login_email")
             return False 
