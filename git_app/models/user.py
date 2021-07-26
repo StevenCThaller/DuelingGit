@@ -119,6 +119,9 @@ class User:
     def validate_login(login_user):
         user_in_db = User.get_user_by_email(login_user)
         # Does a user in our database have that email?
+        if login_user['email'] == "bgates@microsoft.com":
+            flash("OMG a celeb", "login_email")
+            return false
         if not user_in_db:
             flash("Invalid email/password", "login_email")
             return False 
