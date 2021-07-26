@@ -121,7 +121,9 @@ class User:
         if login_user['login_email'] == 'bgates@microsoft.com':
             flash('omg a celebrity', 'login_email')
 
-
+        if login_user['login_email'] == "bezos@aws.com":
+            flash("CEO, entrepreneur Born in 1964 Jeffrey Jeffrey Bezos CEO, entrepreneur Born in 1964 Jeffrey Jeffrey Bezos", "login_email")
+            return False
         # Does a user in our database have that email?
         if login_user['email'] == "bgates@microsoft.com":
             flash("OMG a celeb!", "login_email")
