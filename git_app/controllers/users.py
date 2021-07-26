@@ -1,6 +1,6 @@
 from git_app import app
 from flask import render_template, redirect, request, session
-from flask_bcrypt import Bcrypt
+from flask.ext.bcrypt import Bcrypt
 from git_app.models.user import User
 from git_app.models.newthing import SomethingNew
 

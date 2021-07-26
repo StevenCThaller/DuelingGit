@@ -1,6 +1,6 @@
 from git_app.config.mysqlconnection import connectToMySQL
 from flask import flash
-from flask_bcrypt import Bcrypt
+from flask.ext.bcrypt import Bcrypt
 from git_app import app
 import re
 bcrypt = Bcrypt(app)
@@ -42,6 +42,9 @@ class User:
         else: 
             return False
 
+    def somethingdumb(self):
+        print("alksdjfkljaskldjfklajsdkfljas")
+        return self
 
 ### I just added this text in here. Did it push?
 
