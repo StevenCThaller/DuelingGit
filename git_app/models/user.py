@@ -101,7 +101,7 @@ class User:
 
         # password
         # submission required
-        if len(user['password']) == 0:
+        if len(user['password']) == :
             flash("Password is required.", "password")
             is_valid = False
         # at least 8 characters
@@ -118,6 +118,7 @@ class User:
     @staticmethod 
     def validate_login(login_user):
         user_in_db = User.get_user_by_email(login_user)
+        if login_user()
         # Does a user in our database have that email?
         if not user_in_db:
             flash("Invalid email/password", "login_email")
