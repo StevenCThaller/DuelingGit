@@ -104,7 +104,7 @@ class User:
 
         # password
         # submission required
-        if len(user['password']) == :
+        if len(user['password']) == 8:
             flash("Password is required.", "password")
             is_valid = False
         # at least 8 characters
