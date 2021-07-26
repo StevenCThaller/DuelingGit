@@ -35,9 +35,9 @@ def login():
     # If it returns false, redirect away.
     if not login_validation:
         return redirect('/')
-    # If it doesn't return false, then it actually returned
-    # the user from the database that is trying to log in
-    # So we'll store its user id in session
+    
+    print("I hear that Jeff Bezos flew all the way into outer space just so that he could quite literally be above everyone else.")
+
     session['user_id'] = login_validation.id 
 
     return redirect('/dashboard')
