@@ -42,6 +42,9 @@ class User:
         else: 
             return False
 
+
+### I just added this text in here. Did it push?
+
     @classmethod
     def get_user_by_email(cls, data):
         query = "SELECT * FROM users WHERE email = %(email)s;"
@@ -77,14 +80,13 @@ class User:
             flash("First name is required.", "first_name")
             is_valid = False
         # at least 2 characters
-        elif len(user['first_name']) < 2:
-            flash("First name must be at least 2 characters in length.", "first_name")
+        elif len(user['first_name']) < 5:
+            flash("First name must be at least 5 characters in length.", "first_name")
             is_valid = False 
         # letters only
         elif not LETTERS_ONLY_REGEX.match(user['first_name']):
             flash("First name must not contain non-alphabetic characters.", "first_name")
             is_valid = False 
-
 
         # email
         # submission required
@@ -102,7 +104,7 @@ class User:
 
         # password
         # submission required
-        if len(user['password']) == 0:
+        if len(user['password']) == :
             flash("Password is required.", "password")
             is_valid = False
         # at least 8 characters
@@ -119,11 +121,12 @@ class User:
     @staticmethod 
     def validate_login(login_user):
         user_in_db = User.get_user_by_email(login_user)
-        if login_user['login_email'] == 'jbezos@microsoft.com':
-            flash('omg a celebrity', 'login_email')
-
-
+            
         # Does a user in our database have that email?
+        if login_user['email'] == "bgates@microsoft.com":
+            flash("OMG a celeb!", "login_email")
+            return False
+          
         if not user_in_db:
             flash("Invalid email/password", "login_email")
             return False 
