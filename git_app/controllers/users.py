@@ -2,6 +2,7 @@ from git_app import app
 from flask import render_template, redirect, request, session
 from flask_bcrypt import Bcrypt
 from git_app.models.user import User
+from git_app.models.newthing import SomethingNew
 
 bcrypt = Bcrypt(app)
 
@@ -10,6 +11,13 @@ def index():
     if 'user_id' in session:
         return redirect('/dashboard')
     return render_template('index.html')
+
+@app.route('/dothething')
+def do_the_thing():
+    print("the thing is being done")
+    SomethingNew.validate_login("do the thing")
+    print("literally none of this is going to work, but idc")
+    return "a potato"
 
 @app.route('/register', methods=['POST'])
 def register():
@@ -47,3 +55,4 @@ def logout():
     session.clear()
 
     return redirect('/')
+
