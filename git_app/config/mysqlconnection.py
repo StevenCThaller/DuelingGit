@@ -6,7 +6,8 @@ class MySQLConnection:
         # change the user and password as needed
         connection = pymysql.connect(host = 'localhost',
                                     user = 'root', # THESE LINES ARE IMPORTANT: Your MySQL username and password
-                                    password = 'root', # THESE LINES ARE IMPORTANT: Your MySQL username and password
+                                    #my password is empty on my machine lol now you have to change this
+                                    password = '', # THESE LINES ARE IMPORTANT: Your MySQL username and password
                                     db = db,
                                     charset = 'utf8mb4',
                                     cursorclass = pymysql.cursors.DictCursor,

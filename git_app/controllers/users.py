@@ -37,7 +37,7 @@ def login():
         return redirect('/')
     
     print("I hear that Jeff Bezos flew all the way into outer space just so that he could quite literally be above everyone else.")
-
+    print("Not. An. Astronaut.")
     session['user_id'] = login_validation.id 
 
     return redirect('/dashboard')
