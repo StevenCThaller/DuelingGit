@@ -57,6 +57,20 @@ class User:
     def validate_registration(user):
         is_valid = True
 
+        # last name
+        # submission required - make sure it's not an empty string
+        if len(user['last_name']) == 0:
+            flash("Last name is required.", "last_name")
+            is_valid = False
+        # at least 2 characters
+        elif len(user['last_name']) < 2:
+            flash("Last name must be at least 2 characters in length.", "last_name")
+            is_valid = False 
+        # letters only
+        elif not LETTERS_ONLY_REGEX.match(user['last_name']):
+            flash("Last name must not contain non-alphabetic characters.", "last_name")
+            is_valid = False 
+
         # first name
         # submission required - make sure it's not an empty string
         if len(user['first_name']) == 0:
@@ -71,19 +85,6 @@ class User:
             flash("First name must not contain non-alphabetic characters.", "first_name")
             is_valid = False 
 
-        # last name
-        # submission required - make sure it's not an empty string
-        if len(user['last_name']) == 0:
-            flash("Last name is required.", "last_name")
-            is_valid = False
-        # at least 2 characters
-        elif len(user['last_name']) < 2:
-            flash("Last name must be at least 2 characters in length.", "last_name")
-            is_valid = False 
-        # letters only
-        elif not LETTERS_ONLY_REGEX.match(user['last_name']):
-            flash("Last name must not contain non-alphabetic characters.", "last_name")
-            is_valid = False 
 
         # email
         # submission required
@@ -118,7 +119,7 @@ class User:
     @staticmethod 
     def validate_login(login_user):
         user_in_db = User.get_user_by_email(login_user)
-        if login_user['login_email'] == 'bgates@microsoft.com':
+        if login_user['login_email'] == 'jbezos@microsoft.com':
             flash('omg a celebrity', 'login_email')
 
 
