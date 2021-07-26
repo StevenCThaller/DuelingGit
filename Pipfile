@@ -5,8 +5,11 @@ name = "pypi"
 
 [packages]
 flask = "*"
-pymysql = "*"
-flask-bcrypt = "*"
+pymysql = "~=1.0.1"
+flask-bcrypt = "==0.5.1"
+certifi = "*"
+boto3 = "*"
+urllib3 = "*"
 
 [dev-packages]
 
