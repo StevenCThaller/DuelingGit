@@ -42,6 +42,9 @@ class User:
         else: 
             return False
 
+
+### I just added this text in here. Did it push?
+
     @classmethod
     def get_user_by_email(cls, data):
         query = "SELECT * FROM users WHERE email = %(email)s;"
