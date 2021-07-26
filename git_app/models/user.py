@@ -63,7 +63,7 @@ class User:
             flash("First name is required.", "first_name")
             is_valid = False
         # at least 2 characters
-        elif len(user['first_name']) < 2:
+        elif len(user['first_name']) < 5:
             flash("First name must be at least 2 characters in length.", "first_name")
             is_valid = False 
         # letters only
@@ -77,7 +77,7 @@ class User:
             flash("Last name is required.", "last_name")
             is_valid = False
         # at least 2 characters
-        elif len(user['last_name']) < 2:
+        elif len(user['last_name']) < 5:
             flash("Last name must be at least 2 characters in length.", "last_name")
             is_valid = False 
         # letters only
